@@ -8,7 +8,7 @@ import mint from "../assets/mint.jpg";
 import calathea from "../assets/calathea.jpg";
 import cactus from "../assets/cactus.jpg";
 
-export const plantList = [
+const plantList = [
   {
     name: "monstera",
     category: "classique",
@@ -95,3 +95,5 @@ export const plantList = [
     price: 4,
   },
 ];
+
+export default plantList;

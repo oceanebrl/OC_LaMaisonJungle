@@ -1,0 +1,44 @@
+@import "../variables.scss";
+
+.catWrap {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cat {
+  border-radius: 25px;
+  padding: 5px;
+  appearance: none;
+  border: $mainColor 2px solid;
+  margin-right: 20px;
+}
+
+.option {
+  text-align: center;
+  border: none;
+}
+
+.btn {
+  padding: 5px 10px;
+  background-color: $mainColor;
+  color: #fff;
+  border: 2px solid;
+  border-radius: 25px;
+  transition: 0.5s;
+  position: relative;
+  &:hover {
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 25px;
+    @include gradient;
+  }
+}

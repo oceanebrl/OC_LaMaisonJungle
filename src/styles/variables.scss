@@ -1,3 +1,12 @@
 $mainColor: #31b572;
 $lightColor: #d0ff49;
 $secondaryColor: #00d4ff;
+
+@mixin gradient {
+  background: linear-gradient(
+    90deg,
+    $lightColor 0%,
+    $mainColor 35%,
+    $secondaryColor 100%
+  );
+}
