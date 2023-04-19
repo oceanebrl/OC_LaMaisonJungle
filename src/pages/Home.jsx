@@ -1,9 +1,13 @@
 import style from "../styles/pages/home.module.scss";
 
+import CardList from "../components/CardList";
+
 function Home() {
   return (
-    <main>
-      <h2>Ma page vide</h2>
+    <main className={style.main}>
+      <div className={style.wrap}>
+        <CardList />
+      </div>
     </main>
   );
 }
