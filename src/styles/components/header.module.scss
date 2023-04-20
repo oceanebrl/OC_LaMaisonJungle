@@ -16,7 +16,7 @@
 
 .container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 50px;
   padding: 50px;
   max-width: 1200px;
@@ -45,12 +45,7 @@
     width: 0%;
     height: 3px;
     background: rgb(208, 255, 73);
-    background: linear-gradient(
-      90deg,
-      $lightColor 0%,
-      $mainColor 35%,
-      $secondaryColor 100%
-    );
+    @include gradient;
     transition: 1s;
   }
   &:hover {

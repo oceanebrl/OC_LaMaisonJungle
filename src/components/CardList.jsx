@@ -18,9 +18,16 @@ function CardList() {
     <div>
       <CatSelect cat={cat} activeCat={activeCat} setActiveCat={setActiveCat} />
       <div className={style.cardWrap}>
-        {plantList.map(({ id, cover, name, price, category }) =>
+        {plantList.map(({ id, cover, name, price, category, light, water }) =>
           !activeCat || activeCat === category ? (
-            <CardPlant key={id} cover={cover} name={name} price={price} />
+            <CardPlant
+              key={id}
+              cover={cover}
+              name={name}
+              price={price}
+              light={light}
+              water={water}
+            />
           ) : null
         )}
       </div>
