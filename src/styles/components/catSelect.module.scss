@@ -1,44 +1,80 @@
 @import "../variables.scss";
 
 .catWrap {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   margin-bottom: 50px;
 }
 
-.cat {
-  border-radius: 25px;
-  padding: 5px;
-  appearance: none;
-  border: $mainColor 2px solid;
-  margin-right: 20px;
-}
-
-.option {
+.toggle {
   text-align: center;
-  border: none;
+  &__header {
+    position: relative;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 5px;
+    cursor: pointer;
+    min-width: 250px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    @include borderGradient;
+    &:hover {
+      background-color: lighten($mainColor, 50);
+    }
+  }
+  &__chevron {
+    height: 20px;
+    transform: rotate(180deg);
+    transition: all 0.5s ease-out;
+    &__closed {
+      transform: rotate(0deg);
+    }
+  }
+  &__itemWrap {
+    @include gradient;
+    border-radius: 20px;
+    z-index: -2;
+    padding: 1px;
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+    height: auto;
+    &__closed {
+      transform: scaleY(0);
+      height: 0;
+      opacity: 0;
+    }
+  }
+  &__item {
+    background-color: #fff;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in;
+    &:hover {
+      cursor: pointer;
+      background-color: transparent;
+      color: #fff;
+    }
+  }
 }
 
-.btn {
-  padding: 5px 10px;
-  background-color: $mainColor;
-  color: #fff;
-  border: 2px solid;
-  border-radius: 25px;
-  transition: 0.5s;
+.resetBtn {
   position: relative;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 1px 5px;
+  cursor: pointer;
+  @include borderGradient;
   &:hover {
-    background-color: transparent;
-    cursor: pointer;
-  }
-  &:after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 25px;
-    @include gradient;
+    background-color: lighten($mainColor, 50);
   }
 }
