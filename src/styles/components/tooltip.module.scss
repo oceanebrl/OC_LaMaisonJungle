@@ -5,8 +5,8 @@
   position: absolute;
   z-index: 10;
   font-size: 0.8rem;
-  left: -130px;
-  top: 0;
+  left: -140px;
+  top: -10px;
   width: 40%;
   text-align: center;
   background-color: $mainColor;
@@ -14,4 +14,5 @@
   margin: 10px;
   color: #fff;
   border-radius: 25px;
+  box-shadow: 3px 3px darken($mainColor, 5);
 }

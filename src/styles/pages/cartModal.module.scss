@@ -1,0 +1,106 @@
+@import "../variables.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #171d1a55;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart {
+  background-color: #fff;
+  width: 950px;
+  height: 800px;
+  position: relative;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  @include borderGradient;
+}
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  &__title {
+    color: $mainColor;
+    font-size: 2rem;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background: $mainColor;
+    @include gradient;
+  }
+}
+
+.close {
+  cursor: pointer;
+  background-color: $secondaryColor;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  &__cross {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 40%;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-color: #fff;
+      border-radius: 6px;
+      transform: rotate(45deg);
+    }
+    &:before {
+      transform: rotate(-45deg);
+    }
+  }
+  &:hover,
+  &:focus {
+    transform: rotateZ(90deg);
+    background-color: $mainColor;
+  }
+}
+
+.main {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.footer {
+  padding: 20px;
+  position: relative;
+  &::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: -5px;
+    width: 100%;
+    height: 4px;
+    background: $mainColor;
+    @include gradient;
+  }
+}

@@ -26,3 +26,8 @@ $secondaryColor: #00d4ff;
     border-radius: 25px;
   }
 }
+
+@mixin btnAnimation($n: 1) {
+  transition-delay: calc(($n - 1) * 0.1s);
+  left: calc(($n - 1) * 25%);
+}

@@ -1,0 +1,12 @@
+.care {
+  &:hover {
+    cursor: pointer;
+  }
+  &__type {
+    transition: all 0.3s;
+    &:hover img {
+      transition: transform 0.5s ease-in;
+      transform: scale(1.5);
+    }
+  }
+}
