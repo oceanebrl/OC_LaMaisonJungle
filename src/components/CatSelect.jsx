@@ -46,8 +46,11 @@ function CatSelect({ activeCat, setActiveCat, cat }) {
               ? style.toggle__itemWrap
               : `${style.toggle__itemWrap__closed} ${style.toggle__itemWrap}`
           }>
-          {cat.map((c) => (
-            <div className={style.toggle__item} onClick={handleSelected(c)}>
+          {cat.map((c, index) => (
+            <div
+              key={Math.random()}
+              className={style.toggle__item}
+              onClick={handleSelected(c)}>
               {c}
             </div>
           ))}

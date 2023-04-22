@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import CartBtn from "../components/CartBtn";
+import Cart from "../components/Cart";
 
 import style from "../styles/pages/cartModal.module.scss";
 
@@ -26,7 +27,7 @@ function CartModal() {
               </button>
             </header>
             <div className={style.main}>
-              <p>Le futur panier à coder</p>
+              <Cart />
             </div>
             <footer className={style.footer}>
               <p>Sûrement le total à afficher</p>

@@ -78,8 +78,7 @@
       transform: rotate(-45deg);
     }
   }
-  &:hover,
-  &:focus {
+  &:hover {
     transform: rotateZ(90deg);
     background-color: $mainColor;
   }

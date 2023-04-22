@@ -28,7 +28,10 @@ function CareScale({ careType, scaleValue }) {
     <div className={style.care}>
       {range.map((e) =>
         scaleValue >= e ? (
-          <Tooltip content={text} className={style.care__tip}>
+          <Tooltip
+            key={Math.random()}
+            content={text}
+            className={style.care__tip}>
             <span className={style.care__type} key={e.toString()}>
               {scaleType}
             </span>
