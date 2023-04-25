@@ -1,12 +1,13 @@
 import style from "../styles/pages/home.module.scss";
 
 import CardList from "../components/CardList";
+import { useEffect, useState } from "react";
 
-function Home() {
+function Home({ cart, updateCart }) {
   return (
     <main className={style.main}>
       <div className={style.wrap}>
-        <CardList />
+        <CardList cart={cart} updateCart={updateCart} />
       </div>
     </main>
   );

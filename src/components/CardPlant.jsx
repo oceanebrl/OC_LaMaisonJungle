@@ -2,7 +2,7 @@ import style from "../styles/components/cardPlant.module.scss";
 
 import CareScale from "./CareScale";
 
-function CardPlant({ cover, name, water, light, price, cart, updateCart }) {
+function CardPlant({ cover, name, water, light, price, onClick }) {
   return (
     <article className={style.card}>
       <span className={style.price}>{price}&#8239;€</span>
@@ -13,7 +13,7 @@ function CardPlant({ cover, name, water, light, price, cart, updateCart }) {
           <CareScale careType="water" scaleValue={water} />
           <CareScale careType="light" scaleValue={light} />
         </div>
-        <button className={style.btn}>
+        <button className={style.btn} onClick={onClick}>
           <span className={style.btn__bg}></span>
           <span className={style.btn__bg}></span>Ajouter
         </button>

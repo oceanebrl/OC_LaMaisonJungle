@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import CartBtn from "../components/CartBtn";
 import Cart from "../components/Cart";
 
 import style from "../styles/pages/cartModal.module.scss";
 
-function CartModal() {
+function CartModal({ cart, updateCart }) {
   const [open, setOpen] = useState(false);
   const openModal = () => {
     setOpen(true);
@@ -14,6 +14,16 @@ function CartModal() {
     setOpen(false);
   };
 
+  const total = cart.reduce(
+    (acc, plantType) => acc + plantType.amount * plantType.price,
+    0
+  );
+
+  useEffect(() => {
+    cart.length > 0
+      ? (document.title = `La Maison Jungle | ${total} €`)
+      : (document.title = "La Maison Jungle");
+  }, [cart, total]);
   return (
     <div>
       <CartBtn openModal={openModal} />
@@ -27,10 +37,21 @@ function CartModal() {
               </button>
             </header>
             <div className={style.main}>
-              <Cart />
+              <Cart cart={cart} updateCart={updateCart} total={total} />
             </div>
             <footer className={style.footer}>
-              <p>Sûrement le total à afficher</p>
+              {cart.length > 0 ? (
+                <div>
+                  <p>Total : {total}&#8239;€</p>
+                  <button
+                    className="empty__button"
+                    onClick={() => updateCart([])}>
+                    Vider le panier
+                  </button>
+                </div>
+              ) : (
+                <p>Pourquoi ne pas faire tes amplettes ?</p>
+              )}
             </footer>
           </article>
         </div>
