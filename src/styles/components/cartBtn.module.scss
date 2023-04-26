@@ -53,3 +53,11 @@
     transform: translate(0) scale(2);
   }
 }
+
+@media screen and (max-width: 1402px) {
+  .btnWrap {
+    position: relative;
+    width: 150px;
+    left: 0px;
+  }
+}

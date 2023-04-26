@@ -25,7 +25,7 @@ function CartModal({ cart, updateCart }) {
       : (document.title = "La Maison Jungle");
   }, [cart, total]);
   return (
-    <div>
+    <div className={style.pageWrap}>
       <CartBtn openModal={openModal} />
       {open ? (
         <div className={style.modal} onClick={closeModal}>

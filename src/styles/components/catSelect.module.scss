@@ -71,10 +71,21 @@
   height: 25px;
   background-color: #fff;
   border-radius: 25px;
-  padding: 1px 5px;
+  padding: 5px 5px;
   cursor: pointer;
   @include borderGradient;
   &:hover {
     background-color: lighten($mainColor, 50);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .catWrap {
+    flex-direction: column;
+    gap: 15px;
+    font-size: 0.8rem;
+    &__header {
+      overflow: hidden;
+    }
   }
 }
