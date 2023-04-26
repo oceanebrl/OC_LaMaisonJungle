@@ -118,3 +118,47 @@
     @include gradient;
   }
 }
+
+.totalWrap {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  &__para {
+    font-size: 1.3rem;
+    &__price {
+      font-size: 2rem;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+  }
+  &__btn {
+    background: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid $mainColor;
+    color: $mainColor;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+    position: relative;
+    z-index: 1;
+    &:hover {
+      color: white;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0%;
+      height: 100%;
+      background-color: $mainColor;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.5s ease-in;
+    }
+    &:hover:after {
+      width: 100%;
+    }
+  }
+}

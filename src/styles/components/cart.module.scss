@@ -1,0 +1,113 @@
+@import "../variables.scss";
+
+.page__wrap {
+  width: 100%;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  gap: 25px;
+  border-bottom: 5px solid lighten($secondaryColor, 45);
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 25px 0 25px 0;
+}
+
+.priceName {
+  flex-grow: 1;
+  &__name {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    color: $mainColor;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+    &:hover {
+      color: darken($secondaryColor, 5);
+    }
+  }
+  &__price {
+    font-weight: 500;
+  }
+}
+
+.amountWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.amountPrice {
+  &__amount {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 25px 0 25px;
+    border: solid 2px $mainColor;
+    color: $mainColor;
+    &:focus {
+      border: solid 2px $mainColor;
+    }
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  &__amountBtn {
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $mainColor;
+    width: 30px;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+  &__price {
+    text-align: right;
+    &__total {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.remove {
+  background: none;
+  cursor: pointer;
+  border: 2px solid $mainColor;
+  border-radius: 50%;
+  padding: 5px;
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(1.1);
+    background-color: lighten($mainColor, 50);
+  }
+}
+
+.empty {
+  text-align: center;
+  font-size: 2rem;
+  color: $mainColor;
+  font-weight: 600;
+}

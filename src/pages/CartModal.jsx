@@ -41,16 +41,23 @@ function CartModal({ cart, updateCart }) {
             </div>
             <footer className={style.footer}>
               {cart.length > 0 ? (
-                <div>
-                  <p>Total : {total}&#8239;€</p>
+                <div className={style.totalWrap}>
+                  <p className={style.totalWrap__para}>
+                    Total du panier&#8239;:{" "}
+                    <span className={style.totalWrap__para__price}>
+                      {total}&#8239;€
+                    </span>
+                  </p>
                   <button
-                    className="empty__button"
+                    className={style.totalWrap__btn}
                     onClick={() => updateCart([])}>
                     Vider le panier
                   </button>
                 </div>
               ) : (
-                <p>Pourquoi ne pas faire tes amplettes ?</p>
+                <p className={style.totalWrap__para}>
+                  Pourquoi ne pas faire des amplettes ?
+                </p>
               )}
             </footer>
           </article>
